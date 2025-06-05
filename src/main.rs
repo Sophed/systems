@@ -7,7 +7,7 @@ use maud::Markup;
 mod components;
 mod pages;
 
-const OUTPUT_DIR: &str = "build";
+const OUTPUT_DIR: &str = ".build";
 const STATIC_DIR: &str = "static";
 
 fn main() -> io::Result<()> {
