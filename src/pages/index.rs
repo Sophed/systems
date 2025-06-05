@@ -24,6 +24,7 @@ pub fn index(latest_post: Option<&PostData>) -> Markup {
             }
             h2 { "Projects" }
             ul {
+                (project("soph.systems", "https://soph.systems", "This site is built from a fully custom static site generator written in Rust"))
                 (project("mkpr", "https://github.com/Sophed/mkpr", "Fast Zig CLI tool to create projects from a set of opinionated language templates"))
                 (project("dotfiles", "https://github.com/sophed/dotfiles", "My personal Linux desktop and terminal configuration files"))
                 (project("oci-claimer", "https://github.com/sophed/oci-claimer", "Automatically claim Oracle Cloud free-tier instances"))
