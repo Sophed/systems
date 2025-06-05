@@ -1,9 +1,36 @@
 use maud::{DOCTYPE, Markup, html};
 
+use crate::PostData;
+
 pub mod index;
 pub mod photography;
 pub mod posts;
 pub mod resume;
+
+pub fn post_link(post: &PostData) -> Markup {
+    let title = &post.title;
+    let link = format!("/posts/{}", &post.file_name);
+    let info = format!(
+        "Published: {} ~ {}m read",
+        &post.date,
+        reading_time(&post.content.to_string())
+    );
+    html!(
+        div {
+            a href=(link) { (title) }
+            p { (info) }
+        }
+    )
+}
+
+pub fn reading_time(content: &String) -> String {
+    let parts: Vec<&str> = content
+        .matches(|c: char| c.is_alphanumeric() || c == ' ')
+        .collect();
+    let filtered = parts.join("");
+    let words = filtered.split(" ");
+    format!("{}", words.count() / 200)
+}
 
 pub fn page_template(page_title: Option<&str>, content: Markup) -> Markup {
     let page_title = match page_title {

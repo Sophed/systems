@@ -1,5 +1,5 @@
-title "an example post"
-date "2024-12-14"
+an example post
+2024-12-14
 ---
 The following is a set of markdown syntax tests to ensure that posts are formatted correctly.
 

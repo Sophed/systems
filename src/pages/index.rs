@@ -1,6 +1,14 @@
 use maud::{Markup, html};
 
-pub fn index() -> Markup {
+use crate::PostData;
+
+pub fn index(latest_post: Option<&PostData>) -> Markup {
+    let post_info = match latest_post {
+        None => html!(
+            p { "No posts available :(" }
+        ),
+        Some(p) => super::post_link(p),
+    };
     super::page_template(
         None,
         html!(
@@ -22,7 +30,7 @@ pub fn index() -> Markup {
             }
             p { "The best way to contact me is via my discord - " strong { "@sophed" } }
             h2 { "Latest post" }
-            p { "-" }
+            (post_info)
         ),
     )
 }
