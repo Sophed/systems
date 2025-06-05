@@ -4,7 +4,6 @@ use std::path::Path;
 
 use maud::Markup;
 
-mod components;
 mod pages;
 
 const OUTPUT_DIR: &str = ".build";
@@ -20,6 +19,9 @@ fn main() -> io::Result<()> {
 
     // generate static pages
     generate_page(false, "index", pages::index::index())?;
+    generate_page(false, "resume", pages::resume::resume())?;
+    generate_page(false, "photography", pages::photography::photography())?;
+    generate_page(false, "posts", pages::posts::posts())?;
 
     Ok(())
 }
