@@ -21,6 +21,8 @@ pub fn index(latest_post: Option<&PostData>) -> Markup {
                 a target="_blank" href="https://tech.lgbt/@null" { "Mastodon" }
                 " - "
                 a target="_blank" href="https://bsky.app/profile/soph.cat" { "Bluesky" }
+                " - "
+                a target="_blank" href="https://www.last.fm/user/sophsystems" { "LastFM" }
             }
             h2 { "Projects" }
             ul {
