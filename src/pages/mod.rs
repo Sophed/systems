@@ -45,6 +45,7 @@ pub fn page_template(page_title: Option<&str>, content: Markup) -> Markup {
             link rel="icon" type="image/x-icon" href="/static/favicon.png";
             link rel="stylesheet" href="https://sophed.github.io/iosevka-webfont/7.0.2/iosevka.css";
             link rel="stylesheet" href="/static/global.css";
+            meta name="htmx-config" content="{\"selfRequestsOnly\": false}" {}
         }
         body {
             div."container" {
