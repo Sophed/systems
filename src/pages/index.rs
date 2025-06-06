@@ -12,8 +12,8 @@ pub fn index(latest_post: Option<&PostData>) -> Markup {
     super::page_template(
         None,
         html!(
-            h2 { "Software Engineer, Designer, & Linux Evangelist" }
-            p hx-get="https://api.soph.cat/status" hx-trigger="load every 5s" { "Status: Fetching..." }
+            h2 hx-get="https://api.soph.cat/status" hx-trigger="every 5s" hx-target="#status" { "Software Engineer, Designer, & Linux Evangelist" }
+            p id="status" hx-get="https://api.soph.cat/status" hx-trigger="load" { "Status: Fetching..." }
             p { strong { "Hey! " } "I'm Sophia (she/her), A student software engineer from the UK learning systems and back-end development." }
             p {
                 a target="_blank" href="https://github.com/sophed" { "GitHub" }
