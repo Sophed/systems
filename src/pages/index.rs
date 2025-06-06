@@ -13,7 +13,7 @@ pub fn index(latest_post: Option<&PostData>) -> Markup {
         None,
         html!(
             h2 { "Software Engineer, Designer, & Linux Evangelist" }
-            p hx-get="https://api.soph.cat/status" hx-trigger="every 5s" { "Status: Fetching..." }
+            p hx-get="https://api.soph.cat/status" hx-trigger="load every 5s" { "Status: Fetching..." }
             p { strong { "Hey! " } "I'm Sophia (she/her), A student software engineer from the UK learning systems and back-end development." }
             p {
                 a target="_blank" href="https://github.com/sophed" { "GitHub" }
