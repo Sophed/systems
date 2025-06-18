@@ -37,6 +37,9 @@ pub fn index(latest_post: Option<&PostData>) -> Markup {
             h2 { "Other Cool Sites" }
             ul {
                 (external_link("/ oragejuice.vodka", "https://oragejuice.vodka/"))
+                (external_link("/ slonk.ing", "https://slonk.ing/"))
+                (external_link("/ lily.pet", "https://lily.pet/"))
+                (external_link("/ kibty.town", "https://kibty.town/"))
                 (external_link("/ vert.sh", "https://vert.sh/"))
                 (external_link("/ myrdin.cx", "https://myrdin.cx/"))
                 (external_link("/ renzix.com", "https://renzix.com/"))
