@@ -34,7 +34,26 @@ pub fn index(latest_post: Option<&PostData>) -> Markup {
             p { "The best way to contact me is via my discord - " strong { "@sophed" } }
             h2 { "Latest post" }
             (post_info)
+            h2 { "Other Cool Sites" }
+            ul {
+                (external_link("/ oragejuice.vodka", "https://oragejuice.vodka/"))
+                (external_link("/ vert.sh", "https://vert.sh/"))
+                (external_link("/ myrdin.cx", "https://myrdin.cx/"))
+                (external_link("/ renzix.com", "https://renzix.com/"))
+                (external_link("/ draco.is-a.dev", "https://draco.is-a.dev/"))
+                (external_link("/ soap.is-a.dev", "https://soap.is-a.dev/"))
+            }
         ),
+    )
+}
+
+fn external_link(label: &str, link: &str) -> Markup {
+    html!(
+        li {
+            p {
+                a href=(link) target="_blank" { (label) }
+            }
+        }
     )
 }
 

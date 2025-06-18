@@ -10,6 +10,7 @@ mod pages;
 const OUTPUT_DIR: &str = ".build";
 const STATIC_DIR: &str = "static";
 const POSTS_DIR: &str = "posts";
+const PHOTOS_DIR: &str = "photos";
 
 #[derive(Clone)]
 struct PostData {
@@ -26,7 +27,9 @@ fn main() -> io::Result<()> {
     }
     fs::create_dir_all(format!("{OUTPUT_DIR}/static"))?;
     fs::create_dir(format!("{OUTPUT_DIR}/posts"))?;
+    fs::create_dir(format!("{OUTPUT_DIR}/photos"))?;
     copy_dir_all(STATIC_DIR, format!("{OUTPUT_DIR}/static"))?;
+    copy_dir_all(PHOTOS_DIR, format!("{OUTPUT_DIR}/photos"))?;
 
     // generate static pages
     generate_page(false, "resume", pages::resume::resume())?;
