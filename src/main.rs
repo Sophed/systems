@@ -22,7 +22,7 @@ struct PostData {
 
 fn main() -> io::Result<()> {
     // init build dir
-    if Path::new(OUTPUT_DIR).exists() {
+    if fs::exists(OUTPUT_DIR)? {
         fs::remove_dir_all(OUTPUT_DIR)?;
     }
     fs::create_dir_all(format!("{OUTPUT_DIR}/static"))?;

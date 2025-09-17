@@ -12,8 +12,8 @@ pub fn index(latest_post: Option<&PostData>) -> Markup {
     super::page_template(
         None,
         html!(
-            h2 hx-get="https://api.soph.cat/status" hx-trigger="every 5s" hx-target="#status" { "Software Engineer, Designer, & Linux Evangelist" }
-            p id="status" hx-get="https://api.soph.cat/status" hx-trigger="load" { "Status: Fetching..." }
+            h2 hx-get="https://api.soph.systems/status" hx-trigger="every 5s" hx-target="#status" { "Software Engineer, Designer, & Linux Evangelist" }
+            p id="status" hx-get="https://api.soph.systems/status" hx-trigger="load" { "Loading status..." }
             p { strong { "Hey! " } "I'm Sophia (she/her), A student software engineer from the UK learning systems and back-end development." }
             p {
                 a target="_blank" href="https://github.com/sophed" { "GitHub" }
@@ -26,7 +26,7 @@ pub fn index(latest_post: Option<&PostData>) -> Markup {
             }
             h2 { "Projects" }
             ul {
-                (project("soph.systems", "https://soph.systems", "This website is built from a fully custom static site generator written in Rust"))
+                (project("static site generator", "https://github.com/Sophed/systems", "This website is built from a fully custom static site generator written in Rust"))
                 (project("mkpr", "https://github.com/Sophed/mkpr", "Fast Zig CLI tool to create projects from a set of opinionated language templates"))
                 (project("dotfiles", "https://github.com/sophed/dotfiles", "My personal Linux desktop and terminal configuration files"))
                 (project("oci-claimer", "https://github.com/sophed/oci-claimer", "Automatically claim Oracle Cloud free-tier instances"))
